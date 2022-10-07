@@ -96,8 +96,42 @@ df<-df_source %>% janitor::clean_names() %>% type_convert(local = locale(decimal
 
 #nos piden clasificar gasolineras entre baratas y no baratas
 df %>% view()  # ver el dataset
-df %>% mutate(expensive = rotulo %in% c('CEPSA','REPSOL','BP','SHELL')) %>% view() # hace una variable nueva con las gasolineras caras
-df %>% view()
+df %>% mutate(expensive = !rotulo %in% c('CEPSA','REPSOL','BP','SHELL')) %>% view() # hace una variable nueva con las gasolineras baratas. El ! hace q busque el complementario a las puestas ene l vetor
+df_low<-df %>% mutate(expensive = !rotulo %in% c('CEPSA','REPSOL','BP','SHELL'))  # guarda el dataset con la nueva variable creada
+
+#precio medio del gasoleo de las ccaa
+df_low %>% select(precio_gasoleo_a,idccaa, rotulo, expensive) %>% drop_na() %>% group_by(idccaa, expensive) %>% summarise(mean(precio_gasoleo_a)) %>% view()
+df_low %>% glimpse()
+
+
+
+#crear nueva columna q identifique el 04 del id de la ccaa
+df_low$ccaa<-ifelse(df$idccaa=='01', 'ANDALUCIA',
+                    ifelse(df$idccaa=='02', 'ARAGON',
+                    ifelse(df$idccaa=='03', 'ASTURIAS',
+                    ifelse(df$idccaa=='04', 'ISLAS_BALEARES',
+                    ifelse(df$idccaa=='05', 'ISLAS_CANARIAS',
+                    ifelse(df$idccaa=='06', 'CANTABRIA',
+                    ifelse(df$idccaa=='07', 'CASTILLA_Y_LEON',      
+                    ifelse(df$idccaa=='08', 'CASTILLA_LA_MANCHA',       
+                    ifelse(df$idccaa=='09', 'CATALUÑA',    
+                    ifelse(df$idccaa=='10', 'COMUNITAT_VALENCIANA',       
+                    ifelse(df$idccaa=='11', 'EXTREMADURA',       
+                    ifelse(df$idccaa=='12', 'GALICIA',
+                    ifelse(df$idccaa=='13', 'MADRID',
+                    ifelse(df$idccaa=='14', 'MURCIA',
+                    ifelse(df$idccaa=='15', 'NAVARRA',
+                    ifelse(df$idccaa=='16', 'PAIS_VASCO',
+                    ifelse(df$idccaa=='17', 'RIOJA',
+                    ifelse(df$idccaa=='18', 'CEUTA',
+                    ifelse(df$idccaa=='19', 'MELILLA',
+                                                                     
+                           
+                    ifelse(df$idccaa=='',NA,'no existe'))))))))))))))))))))
+
+df_low %>% view()
+DS22060707 <- df_low
+df_low %>% view()
 
 
 # Reading and Writing files -----------------------------------------------------
