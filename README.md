@@ -1,20 +1,20 @@
 # LPE22060707
 Repo de la asignatura de Lenguajes de Programacion Estadistica
 
-<h1 align="center">Hi 👋, I'm Christian Sucuzhanay Arévalo</h1>
+<h1 align="center">Hi 👋, I'm Raul Vallverdu</h1>
 <h3 align="center">BI & Big Data Engineer | Data Science</h3>
 
 - 🔭 I’m currently working at **Universidad Europea** as Assistant Professor
 - 🔭 I’m currently teaching **Big Data Projects, Concurrent and Distributed Programming, Statistical Programming Languages**
 - 🌱 I’m currently learning **MLOps, AWS Certified Solutions Architect**
 
-- 👨‍💻 Some of my fun projects are available at [https://sukuzhanay.me/]
+- 👨‍💻 Some of my fun projects are available at [https:/RaulVallverdu.me/]
 
-- 📝 I write tech blogs on [https://medium.com/@sukuzhanay](https://medium.com/@sukuzhanay)
+- 📝 I write tech blogs on [https://medium.com/@RaulVallverdu](https://medium.com/@RaulVallverdu)
 
 - 💬 Ask me about **Python, AWS, GCP, GitHub, Git, Docker, Spark, Hadoop, SQL, Data Engineering, BigQuery, Ionic, **
 
-- 📫 How to reach me **sukuzhanay@gmail.com**
+- 📫 How to reach me **raulvallverdu.informatica@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
